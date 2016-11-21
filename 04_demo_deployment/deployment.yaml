@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: hello-node
+spec:
+  replicas: 10
+  template:
+    # this part is same as your pod.yaml
+    metadata:
+        name: hello-node
+        labels:
+            name: hello-node
+    spec:
+        containers:
+            -   name: hello-node
+                image: # see the first demo for the image name
+                ports:
+                    -
+                        containerPort: 8080
+                        name: web

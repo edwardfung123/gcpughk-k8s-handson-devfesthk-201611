@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: hello-node
+    labels:
+        name: hello-node
+spec:
+    containers:
+        -   name: hello-node
+            # The value of image should match the one in the Makefile
+            # It is ${GCR}:${TAG}
+            image: IMAGE_IN_GCR
+            ports:
+                -
+                    containerPort: 8080
+                    name: web
